@@ -230,7 +230,7 @@ Keycloak.prototype.deauthenticated = function (request) {
  * application would prefer to render a fancy template.
  */
 Keycloak.prototype.accessDenied = function (request, response) {
-  response.status(403);
+  (response.status || response.writeHead)(403);
   response.end('Access denied');
 };
 
